@@ -1,12 +1,7 @@
 var container = document.getElementById('container');
-function countdown(initial, final, interval) {
-    if (final === void 0) { final = 0; }
-    if (interval === void 0) { interval = 1; }
-    var current = initial;
-    while (current > final) {
-        container.innerHTML = current;
-        console.log(current);
-        current -= interval;
-    }
-}
-countdown(10, null, 1);
+var todo = {
+    id: 123,
+    name: 'Pick up drycleaning',
+    completed: true
+};
+container.innerHTML = "<div todo='" + todo.id + "' class=\"list-group-item\">\n\t<i class=\"" + (todo.completed ? "" : "hidden") + " text-success glyphicon glyphicon-ok\"></i>\n\t<span class=\"name\">" + todo.name + "</span>\n</div>";
